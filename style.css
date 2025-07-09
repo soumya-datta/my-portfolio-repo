@@ -1,0 +1,272 @@
+/* ===== Base Reset ===== */
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* ===== Navigation ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background: #000000;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+#modeToggle {
+  background: white;
+  color: black;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* ===== Hero Section ===== */
+.apple-hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #000000;
+  color: white;
+  padding: 0 20px;
+}
+.hero-inner h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.hero-inner h2 {
+  font-size: 22px;
+  color: #66aaff;
+  height: 30px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.hero-inner p {
+  font-size: 20px;
+  color: #cccccc;
+  margin-bottom: 24px;
+}
+.apple-btn {
+  padding: 12px 24px;
+  background: white;
+  color: black;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.apple-btn:hover {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 12px rgba(0, 140, 255, 0.6),
+              0 0 24px rgba(0, 140, 255, 0.4);
+  transform: scale(1.05);
+}
+
+
+/* ===== Profile Picture ===== */
+.hero-pic {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #0066ff;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease, opacity 0.6s ease;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  .hero-pic {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* ===== Section Layouts ===== */
+.clean-section {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+.clean-section h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+.clean-section p {
+  font-size: 18px;
+  color: #555555;
+}
+.dark-mode .clean-section p {
+  color: #cccccc;
+}
+
+/* ===== Projects Grid ===== */
+.project-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 40px;
+}
+.project-card {
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+.dark-mode .project-card {
+  background: #1e1e1e;
+}
+
+/* ===== Skills Icons Grid ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  justify-items: center;
+  align-items: center;
+}
+.skill-item {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.skill-item:hover {
+  transform: scale(1.05);
+}
+.skill-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  transition: filter 0.3s ease;
+}
+.dark-mode .skill-item img {
+  filter: brightness(0.8);
+}
+.skill-item span {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* ===== Skill Progress Bars ===== */
+.skill-bars {
+  max-width: 600px;
+  margin: 40px auto 0;
+}
+.bar {
+  margin-bottom: 20px;
+}
+.bar span {
+  font-weight: 600;
+}
+.progress {
+  background: #e0e0e0;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.progress div {
+  height: 100%;
+  background: #007bff;
+}
+.dark-mode .progress {
+  background: #333;
+}
+.dark-mode .progress div {
+  background: #3399ff;
+}
+
+/* ===== Snake Game Styling ===== */
+#snakeGame {
+  display: block;
+  margin: 30px auto;
+  border: 2px solid #0066ff;
+  background: #ffffff;
+}
+.dark-mode #snakeGame {
+  background: #1e1e1e;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #000000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  font-size: 22px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+#scrollTopBtn:hover {
+  background-color: #0056b3;
+}
